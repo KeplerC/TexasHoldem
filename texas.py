@@ -95,18 +95,18 @@ import tensorflow as tf
 import numpy as np
 import sys 
 
+'''
 #enable GPU acceleration
-
 device_name = sys.argv[1]  # Choose device from cmd line. Options: gpu or cpu
 #shape = (int(sys.argv[2]), int(sys.argv[2]))
 if device_name == "gpu":
     device_name = "/gpu:0"
 else:
     device_name = "/cpu:0"
-
+'''
+device_name = "/cpu:0"
     
 with tf.device(device_name):
-
     #graph input
     x = tf.placeholder(tf.float32, [None, n])
     Y = tf.placeholder(tf.float32)
@@ -127,15 +127,18 @@ with tf.device(device_name):
 
     #saver
     saver = tf.train.Saver()
-
-
+    
 #training
-with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
+#with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
+with tf.Session() as sess:
     init = tf.global_variables_initializer()
-    sess.run(init)
-
-    #saver.restore(sess, "./model.ckpt")
-
+    try:
+        saver.restore(sess, "./model.ckpt")
+        print("recover success!")
+    except:
+        print("recovery failed")
+    #sess.run(init)
+    '''
     for epoch in range(training_epochs):
         average_cost = 0
         total_batch = int(m / batch_size)
@@ -150,12 +153,16 @@ with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
             print("Now the weight is :" + str(W.eval()) + "\n")
             print("Now the weight is :" + str(b.eval()) + "\n")
             save_path = saver.save(sess, "./model.ckpt")
-            
+    '''         
     print("Optimization Finished!")
-    
+    print("Now the weight is :" + str(W.eval()) + "\n")
+    print("Now the weight is :" + str(b.eval()) + "\n")
+            
     #model evaluation
-    correct_prediction = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
+    print(pred.eval())
+    correct_prediction = tf.equal(tf.argmax(pred, 0), tf.argmax(Y, 0))
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+    print("correct: ", correct_prediction)
     print("Accuracy:", accuracy.eval({x: trainX, Y: trainY}))
 
 

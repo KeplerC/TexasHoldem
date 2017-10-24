@@ -1,0 +1,621 @@
+       S1  C1  S2  C2  S3  C3  S4  C4  S5  C5  Hand
+0       1  10   1  11   1  13   1  12   1   1     9
+1       2  11   2  13   2  10   2  12   2   1     9
+2       3  12   3  11   3  13   3  10   3   1     9
+3       4  10   4  11   4   1   4  13   4  12     9
+4       4   1   4  13   4  12   4  11   4  10     9
+5       1   2   1   4   1   5   1   3   1   6     8
+6       1   9   1  12   1  10   1  11   1  13     8
+7       2   1   2   2   2   3   2   4   2   5     8
+8       3   5   3   6   3   9   3   7   3   8     8
+9       4   1   4   4   4   2   4   3   4   5     8
+10      1   1   2   1   3   9   1   5   2   3     1
+11      2   6   2   1   4  13   2   4   4   9     0
+12      1  10   4   6   1   2   1   1   3   8     0
+13      2  13   2   1   4   4   1   5   2  11     0
+14      3   8   4  12   3   9   4   2   3   2     1
+15      1   3   4   7   1   5   2   4   4  13     0
+16      1   4   1   1   1   3   3   5   3   2     4
+17      3   8   3  12   2   7   2   6   1   2     0
+18      4   8   1  11   4   6   3   2   4  12     0
+19      3   7   2   7   4  11   1  12   3   1     1
+20      1  13   4   8   2   7   2  10   3  13     1
+21      2   6   2   8   1  11   1   4   3   7     0
+22      3  10   2  10   4   5   1   2   3   8     1
+23      2   1   3  13   4   6   1   9   4   1     1
+24      2  10   2   8   1   8   3   2   2  13     1
+25      2  13   1   5   4   5   4   8   3   3     1
+26      3   1   1   5   2   7   3  13   1   1     1
+27      1   7   1   5   4   8   1   6   2   6     1
+28      3   7   3   9   2  12   2   5   4   4     0
+29      2  10   1   1   1  12   4   6   2   8     0
+...    ..  ..  ..  ..  ..  ..  ..  ..  ..  ..   ...
+24980   4   5   4  13   3  10   1  13   3   2     1
+24981   3   3   1  11   4   2   3   6   3   9     0
+24982   4   1   2   1   1   3   2   6   3   1     3
+24983   3   2   3   1   4  10   4   6   1   3     0
+24984   2   9   3   1   4   5   2   6   3  10     0
+24985   3  10   1   5   3   3   4   3   4   2     1
+24986   2   8   2   5   1  11   4   1   1  12     0
+24987   2  12   3   9   1   4   3   7   4   3     0
+24988   4   8   1   8   1   4   3   3   4  12     1
+24989   4  11   3   2   2  13   4   6   4  12     0
+24990   4  10   2  11   2   9   4   5   1   8     0
+24991   2  11   2   9   4   9   4   6   2  10     1
+24992   4   6   4  10   1   1   1   4   1   3     0
+24993   2   6   2  13   2   5   4   3   2  11     0
+24994   4   7   1  10   2   6   1  11   3   7     1
+24995   2  12   1   2   4   8   3   3   4   6     0
+24996   2  11   1   5   1  10   4  10   2  13     1
+24997   3   7   3  13   2   4   1  12   3   8     0
+24998   1   8   4   1   4  12   1  13   1  10     0
+24999   4  12   3  11   4   4   3  12   2  12     3
+25000   2   8   2  12   4   3   4   2   4   4     0
+25001   2  12   3   5   3   8   4   1   4   2     0
+25002   4  10   2  13   4   5   4   7   1   5     1
+25003   1  12   2   9   2  12   4   8   1  13     1
+25004   3   5   3   7   4  11   3  11   3   2     1
+25005   3   9   2   6   4  11   4  12   2   4     0
+25006   4   1   4  10   3  13   3   4   1  10     1
+25007   2   1   2  10   4   4   4   1   4  13     1
+25008   2  12   4   3   1  10   1  12   4   9     1
+25009   1   7   3  11   3   3   4   8   3   7     1
+
+[25010 rows x 11 columns]
+[(0, 2), (0, 4), (0, 6), (0, 8), (2, 4), (2, 6), (2, 8), (4, 6), (4, 8), (6, 8)]
+       S1  C1  S2  C2  Hand  diff_S  diff_C  diff_S_sc  sum_C  prod_C
+0       1  10   1  11     9       0       1          0     21    11.0
+1       2  11   2  13     9       0       2          0     24    14.3
+2       3  12   3  11     9       0       1          0     23    13.2
+3       4  10   4  11     9       0       1          0     21    11.0
+4       4   1   4  13     9       0      12          0     14     1.3
+5       1   2   1   4     8       0       2          0      6     0.8
+6       1   9   1  12     8       0       3          0     21    10.8
+7       2   1   2   2     8       0       1          0      3     0.2
+8       3   5   3   6     8       0       1          0     11     3.0
+9       4   1   4   4     8       0       3          0      5     0.4
+10      1   1   2   1     1       1       0          3      2     0.1
+11      2   6   2   1     0       0       5          0      7     0.6
+12      1  10   4   6     0       3       4          9     16     6.0
+13      2  13   2   1     0       0      12          0     14     1.3
+14      3   8   4  12     1       1       4          3     20     9.6
+15      1   3   4   7     0       3       4          9     10     2.1
+16      1   4   1   1     4       0       3          0      5     0.4
+17      3   8   3  12     0       0       4          0     20     9.6
+18      4   8   1  11     0       3       3          9     19     8.8
+19      3   7   2   7     1       1       0          3     14     4.9
+20      1  13   4   8     1       3       5          9     21    10.4
+21      2   6   2   8     0       0       2          0     14     4.8
+22      3  10   2  10     1       1       0          3     20    10.0
+23      2   1   3  13     1       1      12          3     14     1.3
+24      2  10   2   8     1       0       2          0     18     8.0
+25      2  13   1   5     1       1       8          3     18     6.5
+26      3   1   1   5     1       2       4          6      6     0.5
+27      1   7   1   5     1       0       2          0     12     3.5
+28      3   7   3   9     0       0       2          0     16     6.3
+29      2  10   1   1     0       1       9          3     11     1.0
+...    ..  ..  ..  ..   ...     ...     ...        ...    ...     ...
+24980   1  13   3   2     1       2      11          6     15     2.6
+24981   3   6   3   9     0       0       3          0     15     5.4
+24982   2   6   3   1     3       1       5          3      7     0.6
+24983   4   6   1   3     0       3       3          9      9     1.8
+24984   2   6   3  10     0       1       4          3     16     6.0
+24985   4   3   4   2     1       0       1          0      5     0.6
+24986   4   1   1  12     0       3      11          9     13     1.2
+24987   3   7   4   3     0       1       4          3     10     2.1
+24988   3   3   4  12     1       1       9          3     15     3.6
+24989   4   6   4  12     0       0       6          0     18     7.2
+24990   4   5   1   8     0       3       3          9     13     4.0
+24991   4   6   2  10     1       2       4          6     16     6.0
+24992   1   4   1   3     0       0       1          0      7     1.2
+24993   4   3   2  11     0       2       8          6     14     3.3
+24994   1  11   3   7     1       2       4          6     18     7.7
+24995   3   3   4   6     0       1       3          3      9     1.8
+24996   4  10   2  13     1       2       3          6     23    13.0
+24997   1  12   3   8     0       2       4          6     20     9.6
+24998   1  13   1  10     0       0       3          0     23    13.0
+24999   3  12   2  12     3       1       0          3     24    14.4
+25000   4   2   4   4     0       0       2          0      6     0.8
+25001   4   1   4   2     0       0       1          0      3     0.2
+25002   4   7   1   5     1       3       2          9     12     3.5
+25003   4   8   1  13     1       3       5          9     21    10.4
+25004   3  11   3   2     1       0       9          0     13     2.2
+25005   4  12   2   4     0       2       8          6     16     4.8
+25006   3   4   1  10     1       2       6          6     14     4.0
+25007   4   1   4  13     1       0      12          0     14     1.3
+25008   1  12   4   9     1       3       3          9     21    10.8
+25009   4   8   3   7     1       1       1          3     15     5.6
+
+[250100 rows x 10 columns]
+0        1
+1        1
+2        1
+3        1
+4        1
+5        1
+6        1
+7        1
+8        1
+9        1
+10       0
+11       0
+12       0
+13       0
+14       0
+15       0
+16       1
+17       0
+18       0
+19       0
+20       0
+21       0
+22       0
+23       0
+24       0
+25       0
+26       0
+27       0
+28       0
+29       0
+        ..
+24980    0
+24981    0
+24982    1
+24983    0
+24984    0
+24985    0
+24986    0
+24987    0
+24988    0
+24989    0
+24990    0
+24991    0
+24992    0
+24993    0
+24994    0
+24995    0
+24996    0
+24997    0
+24998    0
+24999    1
+25000    0
+25001    0
+25002    0
+25003    0
+25004    0
+25005    0
+25006    0
+25007    0
+25008    0
+25009    0
+Name: Hand, Length: 250100, dtype: int64
+       S1  C1  S2  C2  diff_S  diff_C  diff_S_sc  sum_C  prod_C
+0       1  10   1  11       0       1          0     21    11.0
+1       2  11   2  13       0       2          0     24    14.3
+2       3  12   3  11       0       1          0     23    13.2
+3       4  10   4  11       0       1          0     21    11.0
+4       4   1   4  13       0      12          0     14     1.3
+5       1   2   1   4       0       2          0      6     0.8
+6       1   9   1  12       0       3          0     21    10.8
+7       2   1   2   2       0       1          0      3     0.2
+8       3   5   3   6       0       1          0     11     3.0
+9       4   1   4   4       0       3          0      5     0.4
+10      1   1   2   1       1       0          3      2     0.1
+11      2   6   2   1       0       5          0      7     0.6
+12      1  10   4   6       3       4          9     16     6.0
+13      2  13   2   1       0      12          0     14     1.3
+14      3   8   4  12       1       4          3     20     9.6
+15      1   3   4   7       3       4          9     10     2.1
+16      1   4   1   1       0       3          0      5     0.4
+17      3   8   3  12       0       4          0     20     9.6
+18      4   8   1  11       3       3          9     19     8.8
+19      3   7   2   7       1       0          3     14     4.9
+20      1  13   4   8       3       5          9     21    10.4
+21      2   6   2   8       0       2          0     14     4.8
+22      3  10   2  10       1       0          3     20    10.0
+23      2   1   3  13       1      12          3     14     1.3
+24      2  10   2   8       0       2          0     18     8.0
+25      2  13   1   5       1       8          3     18     6.5
+26      3   1   1   5       2       4          6      6     0.5
+27      1   7   1   5       0       2          0     12     3.5
+28      3   7   3   9       0       2          0     16     6.3
+29      2  10   1   1       1       9          3     11     1.0
+...    ..  ..  ..  ..     ...     ...        ...    ...     ...
+24980   1  13   3   2       2      11          6     15     2.6
+24981   3   6   3   9       0       3          0     15     5.4
+24982   2   6   3   1       1       5          3      7     0.6
+24983   4   6   1   3       3       3          9      9     1.8
+24984   2   6   3  10       1       4          3     16     6.0
+24985   4   3   4   2       0       1          0      5     0.6
+24986   4   1   1  12       3      11          9     13     1.2
+24987   3   7   4   3       1       4          3     10     2.1
+24988   3   3   4  12       1       9          3     15     3.6
+24989   4   6   4  12       0       6          0     18     7.2
+24990   4   5   1   8       3       3          9     13     4.0
+24991   4   6   2  10       2       4          6     16     6.0
+24992   1   4   1   3       0       1          0      7     1.2
+24993   4   3   2  11       2       8          6     14     3.3
+24994   1  11   3   7       2       4          6     18     7.7
+24995   3   3   4   6       1       3          3      9     1.8
+24996   4  10   2  13       2       3          6     23    13.0
+24997   1  12   3   8       2       4          6     20     9.6
+24998   1  13   1  10       0       3          0     23    13.0
+24999   3  12   2  12       1       0          3     24    14.4
+25000   4   2   4   4       0       2          0      6     0.8
+25001   4   1   4   2       0       1          0      3     0.2
+25002   4   7   1   5       3       2          9     12     3.5
+25003   4   8   1  13       3       5          9     21    10.4
+25004   3  11   3   2       0       9          0     13     2.2
+25005   4  12   2   4       2       8          6     16     4.8
+25006   3   4   1  10       2       6          6     14     4.0
+25007   4   1   4  13       0      12          0     14     1.3
+25008   1  12   4   9       3       3          9     21    10.8
+25009   4   8   3   7       1       1          3     15     5.6
+
+[250100 rows x 9 columns]
+(250100, 9)
+(250100, 9)
+(250100,)
+Epoch: 00050 cost= 766.89327979745951324730
+Now the weight is :[[ 0.01290917]
+ [ 0.63096905]
+ [-0.31084037]
+ [ 0.70692205]
+ [-0.59474444]
+ [ 0.92783213]
+ [-0.61357093]
+ [ 0.91124797]
+ [ 0.61835742]]
+
+Now the weight is :-65.169
+
+Epoch: 00100 cost= 766.89323878603192952141
+Now the weight is :[[ 0.64387727]
+ [ 0.12411261]
+ [-0.42981911]
+ [-0.9699676 ]
+ [ 0.19585299]
+ [-0.26987648]
+ [ 0.57843304]
+ [-0.39220333]
+ [-0.1612587 ]]
+
+Now the weight is :-66.5619
+
+Epoch: 00150 cost= 766.89319870196800366102
+Now the weight is :[[ 0.09843111]
+ [-0.11637998]
+ [ 0.55056739]
+ [-0.8526094 ]
+ [ 0.96981788]
+ [-0.25276375]
+ [-0.16438532]
+ [ 0.77795982]
+ [ 0.0553863 ]]
+
+Now the weight is :-68.4085
+
+Epoch: 00200 cost= 766.89323711433735297760
+Now the weight is :[[-0.04598093]
+ [-0.6641736 ]
+ [ 0.91472197]
+ [ 0.52070856]
+ [-0.89255929]
+ [ 0.49602032]
+ [-0.77043056]
+ [-0.34696317]
+ [-0.9424324 ]]
+
+Now the weight is :-68.708
+
+Epoch: 00250 cost= 766.89324270292229357437
+Now the weight is :[[-0.52007127]
+ [-0.32001591]
+ [ 0.98525572]
+ [-0.75221252]
+ [ 0.03869677]
+ [-0.08985019]
+ [-0.81816554]
+ [ 0.55637836]
+ [ 0.26555133]]
+
+Now the weight is :-69.0211
+
+Epoch: 00300 cost= 766.89322365536543202325
+Now the weight is :[[-0.53075242]
+ [-0.92196465]
+ [-0.1832664 ]
+ [-0.27784967]
+ [-0.03809929]
+ [ 0.77726364]
+ [ 0.35540771]
+ [ 0.4133935 ]
+ [ 0.35292792]]
+
+Now the weight is :-69.2124
+
+Epoch: 00350 cost= 766.89324270292229357437
+Now the weight is :[[ 0.55569506]
+ [-0.52661204]
+ [ 0.31330466]
+ [ 0.49674344]
+ [-0.8898077 ]
+ [-0.09131122]
+ [ 0.88912106]
+ [-0.31135273]
+ [-0.18113041]]
+
+Now the weight is :-69.493
+
+Epoch: 00400 cost= 766.89324238566632629954
+Now the weight is :[[-0.33590817]
+ [ 0.6663537 ]
+ [-0.50444627]
+ [ 0.81800938]
+ [-0.22968793]
+ [ 0.13147211]
+ [-0.11189914]
+ [-0.76237345]
+ [ 0.26785851]]
+
+Now the weight is :-69.9572
+
+Epoch: 00450 cost= 766.89294634929581206961
+Now the weight is :[[-0.50803447]
+ [ 0.46829176]
+ [ 0.68515778]
+ [ 0.00271273]
+ [-0.0679276 ]
+ [ 0.5848217 ]
+ [-0.43665862]
+ [-0.58567333]
+ [ 0.47737002]]
+
+Now the weight is :-69.94
+
+Epoch: 00500 cost= 766.89324172675026147772
+Now the weight is :[[-0.10695243]
+ [-0.23563218]
+ [-0.89588714]
+ [ 0.4835887 ]
+ [ 0.14239621]
+ [ 0.32302976]
+ [ 0.25924039]
+ [ 0.22061992]
+ [-0.04256392]]
+
+Now the weight is :-69.9946
+
+Epoch: 00550 cost= 766.89378968871790220874
+Now the weight is :[[-0.33910656]
+ [-0.74049759]
+ [ 0.57682347]
+ [-0.54560828]
+ [ 0.64415312]
+ [ 0.70477915]
+ [-0.88122773]
+ [ 0.84561133]
+ [-0.26802492]]
+
+Now the weight is :-70.0561
+
+Epoch: 00600 cost= 766.89323340488363101031
+Now the weight is :[[ 0.99595833]
+ [-0.94551444]
+ [-0.93837905]
+ [-0.6300683 ]
+ [-0.70457983]
+ [-0.67899799]
+ [ 0.28710389]
+ [-0.00958657]
+ [-0.35825396]]
+
+Now the weight is :-70.0882
+
+Epoch: 00650 cost= 766.89324228804912308988
+Now the weight is :[[ 0.46512532]
+ [ 0.54955864]
+ [ 0.33422303]
+ [-0.94506359]
+ [-0.29422402]
+ [-0.66125226]
+ [ 0.62653589]
+ [-0.18136764]
+ [ 0.61608744]]
+
+Now the weight is :-70.089
+
+Epoch: 00700 cost= 766.89324253209213111404
+Now the weight is :[[ 0.94499183]
+ [-0.40122151]
+ [ 0.33536601]
+ [ 0.44109583]
+ [-0.4175508 ]
+ [ 0.54873872]
+ [ 0.8585794 ]
+ [-0.78063917]
+ [ 0.90743995]]
+
+Now the weight is :-70.2369
+
+Epoch: 00750 cost= 766.89324145830289580772
+Now the weight is :[[ 0.93147016]
+ [ 0.90740228]
+ [-0.69761395]
+ [ 0.42102456]
+ [ 0.99074268]
+ [ 0.12494254]
+ [-0.16698503]
+ [ 0.09207869]
+ [-0.43701315]]
+
+Now the weight is :-70.2197
+
+Epoch: 00800 cost= 766.89312236531509370252
+Now the weight is :[[-0.24674225]
+ [-0.36931777]
+ [ 0.37389946]
+ [-0.48019314]
+ [-0.44506145]
+ [ 0.09336662]
+ [-0.76913047]
+ [-0.76348352]
+ [-0.70888352]]
+
+Now the weight is :-70.2104
+
+Epoch: 00850 cost= 766.89324247108152121655
+Now the weight is :[[ 0.55360103]
+ [ 0.39152718]
+ [-0.83478332]
+ [-0.17369628]
+ [ 0.88047242]
+ [-0.24826741]
+ [ 0.09454203]
+ [ 0.37317538]
+ [-0.21783257]]
+
+Now the weight is :-70.4445
+
+Epoch: 00900 cost= 766.89324270292229357437
+Now the weight is :[[-0.15273738]
+ [-0.63985682]
+ [-0.10670161]
+ [-0.56746888]
+ [-0.79524589]
+ [-0.70179582]
+ [ 0.3060081 ]
+ [ 0.04895782]
+ [ 0.29702544]]
+
+Now the weight is :-70.4242
+
+Epoch: 00950 cost= 766.89323811491374272009
+Now the weight is :[[ 0.62337971]
+ [-0.0502491 ]
+ [ 0.47464681]
+ [ 0.99091077]
+ [-0.87302732]
+ [ 0.98246694]
+ [-0.49127674]
+ [-0.00406694]
+ [ 0.37462687]]
+
+Now the weight is :-70.4186
+
+Epoch: 01000 cost= 766.89324251989000913454
+Now the weight is :[[-0.2068634 ]
+ [-0.9253602 ]
+ [-0.76208186]
+ [-0.51306796]
+ [ 0.52037191]
+ [-0.88915181]
+ [ 0.99454308]
+ [-0.57486916]
+ [ 0.44074726]]
+
+Now the weight is :-71.2792
+
+Optimization Finished!
+Device mapping: no known devices.
+save/RestoreV2: (RestoreV2): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/sub: (Sub): /job:localhost/replica:0/task:0/cpu:0
+bias: (VariableV2): /job:localhost/replica:0/task:0/cpu:0
+save/Assign: (Assign): /job:localhost/replica:0/task:0/cpu:0
+save/restore_all: (NoOp): /job:localhost/replica:0/task:0/cpu:0
+save/SaveV2: (SaveV2): /job:localhost/replica:0/task:0/cpu:0
+save/control_dependency: (Identity): /job:localhost/replica:0/task:0/cpu:0
+bias/read: (Identity): /job:localhost/replica:0/task:0/cpu:0
+bias/Assign: (Assign): /job:localhost/replica:0/task:0/cpu:0
+init: (NoOp): /job:localhost/replica:0/task:0/cpu:0
+random_uniform/sub: (Sub): /job:localhost/replica:0/task:0/cpu:0
+random_uniform/RandomUniform: (RandomUniform): /job:localhost/replica:0/task:0/cpu:0
+random_uniform/mul: (Mul): /job:localhost/replica:0/task:0/cpu:0
+random_uniform: (Add): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/Shape_1: (Shape): /job:localhost/replica:0/task:0/cpu:0
+MatMul: (MatMul): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/Shape: (Shape): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/BroadcastGradientArgs: (BroadcastGradientArgs): /job:localhost/replica:0/task:0/cpu:0
+add: (Add): /job:localhost/replica:0/task:0/cpu:0
+Sigmoid: (Sigmoid): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/Shape: (Shape): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/BroadcastGradientArgs: (BroadcastGradientArgs): /job:localhost/replica:0/task:0/cpu:0
+sub: (Sub): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/zeros_like: (ZerosLike): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Log: (Log): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Greater: (Greater): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Select: (Select): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Pow: (Pow): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Shape: (Shape): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/BroadcastGradientArgs: (BroadcastGradientArgs): /job:localhost/replica:0/task:0/cpu:0
+Pow: (Pow): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/Shape: (Shape): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/Size: (Size): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/range: (Range): /job:localhost/replica:0/task:0/cpu:0
+Rank: (Rank): /job:localhost/replica:0/task:0/cpu:0
+range: (Range): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/add: (Add): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/mod: (FloorMod): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/Shape_1: (Shape): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/Fill: (Fill): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/DynamicStitch: (DynamicStitch): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/Maximum: (Maximum): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/floordiv: (FloorDiv): /job:localhost/replica:0/task:0/cpu:0
+Sum: (Sum): /job:localhost/replica:0/task:0/cpu:0
+gradients/Shape: (Shape): /job:localhost/replica:0/task:0/cpu:0
+gradients/Fill: (Fill): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/Reshape: (Reshape): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/Tile: (Tile): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/mul_2: (Mul): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/mul_3: (Mul): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Sum_1: (Sum): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Reshape_1: (Reshape): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/mul: (Mul): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/mul_1: (Mul): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Sum: (Sum): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Reshape: (Reshape): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/tuple/group_deps: (NoOp): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/tuple/control_dependency_1: (Identity): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/tuple/control_dependency: (Identity): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/Sum_1: (Sum): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/Neg: (Neg): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/Reshape_1: (Reshape): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/Sum: (Sum): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/Reshape: (Reshape): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/tuple/group_deps: (NoOp): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/tuple/control_dependency_1: (Identity): /job:localhost/replica:0/task:0/cpu:0
+gradients/sub_grad/tuple/control_dependency: (Identity): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sigmoid_grad/SigmoidGrad: (SigmoidGrad): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/Sum_1: (Sum): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/Reshape_1: (Reshape): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/Sum: (Sum): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/Reshape: (Reshape): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/tuple/group_deps: (NoOp): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/tuple/control_dependency_1: (Identity): /job:localhost/replica:0/task:0/cpu:0
+GradientDescent/update_bias/ApplyGradientDescent: (ApplyGradientDescent): /job:localhost/replica:0/task:0/cpu:0
+GradientDescent: (NoOp): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/tuple/control_dependency: (Identity): /job:localhost/replica:0/task:0/cpu:0
+save/RestoreV2/shape_and_slices: (Const): /job:localhost/replica:0/task:0/cpu:0
+save/RestoreV2/tensor_names: (Const): /job:localhost/replica:0/task:0/cpu:0
+save/SaveV2/shape_and_slices: (Const): /job:localhost/replica:0/task:0/cpu:0
+save/SaveV2/tensor_names: (Const): /job:localhost/replica:0/task:0/cpu:0
+save/Const: (Const): /job:localhost/replica:0/task:0/cpu:0
+GradientDescent/learning_rate: (Const): /job:localhost/replica:0/task:0/cpu:0
+gradients/add_grad/Shape_1: (Const): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Greater/y: (Const): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/sub/y: (Const): /job:localhost/replica:0/task:0/cpu:0
+gradients/Pow_grad/Shape_1: (Const): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/Maximum/y: (Const): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/Fill/value: (Const): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/range/delta: (Const): /job:localhost/replica:0/task:0/cpu:0
+gradients/Sum_grad/range/start: (Const): /job:localhost/replica:0/task:0/cpu:0
+gradients/Const: (Const): /job:localhost/replica:0/task:0/cpu:0
+range/delta: (Const): /job:localhost/replica:0/task:0/cpu:0
+range/start: (Const): /job:localhost/replica:0/task:0/cpu:0
+Pow/y: (Const): /job:localhost/replica:0/task:0/cpu:0
+bias/initial_value: (Const): /job:localhost/replica:0/task:0/cpu:0
+random_uniform/max: (Const): /job:localhost/replica:0/task:0/cpu:0
+random_uniform/min: (Const): /job:localhost/replica:0/task:0/cpu:0
+random_uniform/shape: (Const): /job:localhost/replica:0/task:0/cpu:0
+Placeholder_1: (Placeholder): /job:localhost/replica:0/task:0/cpu:0
+Placeholder: (Placeholder): /job:localhost/replica:0/task:0/cpu:0
